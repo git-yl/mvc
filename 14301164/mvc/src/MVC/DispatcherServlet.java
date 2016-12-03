@@ -47,7 +47,12 @@ public class DispatcherServlet implements Servlet {
         		flag = true;
         	}
         } catch(Exception e){}
-        String key = uri.substring(uri.lastIndexOf("/"));
+        String key;
+        if(uri.lastIndexOf("/") == -1){
+        	key = uri;
+        }else{
+        	key = uri.substring(uri.lastIndexOf("/"));
+        }
         
         Method amethod = requestMapping.get(key);
     	ModelAndView mav = null;

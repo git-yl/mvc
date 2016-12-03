@@ -184,8 +184,8 @@ public class readJsp {
     public static String testJsp(String filename, ModelAndView mav) throws IOException  
     {
         UUID uuid = UUID.randomUUID();
-        String guid = uuid.toString().replace("-", "");
-        String name = "a" + guid.substring(0, 12);
+        String[] uuids = uuid.toString().split("-");
+        String name = "asdf" + uuids[0];
         
         FileInputStream fins = null;
         String file = "";
